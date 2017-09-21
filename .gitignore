@@ -1,0 +1,27 @@
+*.pyc
+*.lyx~
+*.lyx#
+*.Rhistory
+*.Rapp.history
+/temp/
+*.DS_Store
+*.aux
+*.fls
+*.lof
+*.lot
+*.nav
+*.snm
+*.toc
+*.out
+*.svn
+*.emergency
+*.synctex.gz
+*.log
+*.bbl
+*.blg
+*.pdf
+*.bat
+*.asv
+
+#Except main output files.
+!output/paper/main.pdf

@@ -1,0 +1,22 @@
+Import('*')
+#For examples, see below
+
+
+#Preliminary step necessary to simulate critical values - creates coefficients and respective covariacne matrices for figures
+target = ['#output/analysis/covariances/no_control.txt', '#output/analysis/covariances/x_control.txt', '#output/analysis/covariances/x_outcome.txt',
+		  '#output/analysis/covariances/eta_control.txt', '#output/analysis/covariances/timing1_control.txt']      
+source = ['#source/analysis/event_study_simulation_single_step1.do']     
+
+env.Stata(target, source)
+
+#Generate critical values in Matlab
+target = ['#output/analysis/simulated_crit.txt']      
+source = ['#source/analysis/uniform_ci_sim.m', '#output/analysis/covariances/no_control.txt', '#output/analysis/covariances/x_control.txt', 
+		  '#output/analysis/covariances/x_outcome.txt', '#output/analysis/covariances/eta_control.txt', '#output/analysis/covariances/timing1_control.txt']     
+
+env.Matlab(target, source)
+
+
+
+
+
