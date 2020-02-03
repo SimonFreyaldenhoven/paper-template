@@ -17,7 +17,7 @@ env = Environment(ENV = {'PATH' : os.environ['PATH']},
 env.Decider('MD5-timestamp') # Only computes hash if time-stamp changed
 Export('env')
 
-#SConscript('source/data/SConscript') 
+SConscript('source/data/SConscript') 
 SConscript('source/analysis/SConscript')
 SConscript('source/paper/SConscript') 
 SConscript('source/talk/SConscript')
